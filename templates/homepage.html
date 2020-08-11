@@ -1,0 +1,455 @@
+<!Doctype html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Indusone</title>
+	<!--<link rel="stylesheet" href="style.css">
+	-->
+	<link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500;700;900&display=swap"
+	rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body{
+	font-family: 'Recursive', sans-serif;
+}
+.navbar{
+	display:flex;
+	width: 100%;
+	flex-direction: row;
+	align-items:center;
+	background:radial-gradient(black,white);
+	text-align:center;
+}
+.navbar .logo:hover{
+	background:black;
+}
+.navbar .title{
+	padding-left: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 253, 253);
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+
+#check{
+    display: none;
+  }
+
+.categories .tabs{
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.categories .col-5{
+
+		max-width:600px;
+}
+
+.small-container{
+	max-width:2000px;
+}
+.small-container .row{
+	display: flex;
+	flex-direction: row;
+}
+
+ .column{
+	padding:10px;
+	width:450px;
+	margin-left:auto;
+	margin-right: auto;
+	margin-bottom:20px;
+	margin-top:10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	cursor:pointer;
+	transition:transform 0.5s;
+}
+.small-container .column2{
+	margin-left: inherit;
+}
+
+.small-container .column img{
+	width:100%;
+}
+
+.small-container .column:hover{
+	transform:translateY(-10px);
+}
+nav{
+	flex:1;
+	text-align:right;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+  }
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+nav ul li a{
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+a{
+	text-decoration:none;
+	color:#555;
+
+}
+p{
+	color:#555;
+
+}
+.container{
+	max-width:2300px;
+	max-height:500px;
+	margin:auto;
+	padding-left:150px;
+	padding-right:150px;
+}
+
+.col-2{
+	flex-basis:50%;
+	min-width:100px;
+}
+.col-2 h1{
+	font-size:40px;
+	line-height:50px;
+	margin:25px 0;
+}
+.btn{
+	display:inline-block;
+	background:black;
+	color:white;
+	padding:8px 30px;
+	margin:30px 0;
+	border-radius:30px;
+	transition:background 0.1s;
+}
+.btn:hover{
+	background:#563434;
+}
+.header
+{
+	background:radial-gradient(#fff,#ffd6d6);
+}
+.header .row{
+	margin-top:70px;
+}
+
+.categories{
+	margin:40px 0;
+	padding:10px;
+}
+.btn1{
+	display:inline-block;
+	background:gray;
+	color:white;
+	padding:8px 15px;
+	margin:40px 0;
+	border-radius:30px;
+	transition:background 0.1s;
+
+}
+.btn1:hover{
+	background:#563434;
+}
+.col-5{
+	flex:left;
+	margin-left:10px;
+	margin-right:10px;
+	max-width:200px;
+}
+
+.tab:hover{
+	background:white;
+}
+.link:hover{
+	text-decoration:underline;
+}
+
+.footer{
+	background:#000;
+	color:#8a8a8a;
+	font-size:14px;
+	padding:30px 0 20px;
+}
+ .footer-col-1 h5{
+	 font-size:20px;
+	 text-align:center;
+
+
+}
+.footer h5{
+	color:#fff;
+	margin-bottom:20px;
+	font-size:20px;
+}
+.footer-col-1,.footer-col-2{
+	min-width:250px;
+	margin-bottom:20px;
+}
+.footer-col-1 {
+	flex-basis:30%;
+}
+.footer-col-2{
+	flex:1;
+	text-align:center;
+}
+ul{
+	list-style-type:none;
+}
+.footer hr{
+	border:none;
+	background:#b5b5b5;
+	height:1px;
+	margin:20px 0;
+
+
+}
+.copyright{
+	text-align:center;
+}
+.menu-icon{
+	width:28px;
+	margin-left:20px;
+
+
+}
+
+@media only screen and (max-width: 950px){
+
+
+
+   nav ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+	  background:#333;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all .5s;
+    }
+    nav ul li{
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a{
+      font-size: 20px;
+    }
+    #check:checked ~nav ul{
+      left: 0;
+	}
+	.checkbtn{
+		display: inline;
+    }
+  }
+  nav ul li a{
+	color:#fff;
+}
+
+/* @media only screen and (max-width:860px){
+	.checkbtn{
+		display: block;
+	  }
+	nav ul{
+		position:relative;
+		top:70px;
+		left:0;
+		background:#333;
+		text-align: center;
+		width:100%;
+	}
+	nav ul li{
+		display:block;
+		margin-right:50px;
+		margin-top:10px;
+		margin-bottom:10px;
+}
+
+#check:checked ~ ul{
+	left: 0;
+  }
+}
+nav ul li a{
+	color:#fff;
+}
+.menu-icon{
+	display:block;
+	cursor:pointer;
+
+} */
+/* @media only screen and(max-width:600px){
+	.row{
+		text-align:center;
+	}
+	.column,.col-2{
+		flex-basis:100%;
+
+	}
+	} */
+
+
+
+
+
+
+
+	</style>
+</head>
+<body>
+<div class="header">
+		<div class="navbar">
+			<div class="logo">
+				<a href="https://techindusone.com/"class="logo">
+				<img src="{% static 'images/indus.jpeg' %}" width="200px" height="75px">
+				</a>
+			</div>
+			<h2 class = "title">TECH INDUSONE SERVICES</h2>
+			<nav>
+				<input type="checkbox" id="check">
+				<label for="check" class="checkbtn">
+					<i class="fas fa-bars"></i>
+				</label>
+				<ul>
+					<li><a class="active" href="{% url 'home' %}"class="tab">Home</a></li>
+					{% if user.is_authenticated %}
+					<li><a href="{% url 'logout' %}"class="tab">Log Out</a></li>
+					{% else %}
+					<li><a href="{% url 'login' %}"class="tab">Log In</a></li>
+					<li><a href="{% url 'signup' %}"class="tab"> Register</a></li>
+					{% endif %}
+					<li><a href="https://techindusone.com/"class="tab">About</a></li>
+				</ul>
+  		  	</nav>
+		</div>
+		<div class="container">
+			<div class="col-2">
+				<h1>GET HIRED</h1>
+				<p>Give yourself a new oppurtunity <br>covid -19!</p>
+				<p>Upload Your Resume.</p>
+				{% if user.is_authenticated %}
+				<a href="{% url 'resume_upload' %}"class="btn">upload resume &#8594;</a>
+				{% else %}
+				<a href="{% url 'login' %}"class="btn">upload resume &#8594;</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="categories">
+		<div class="small-container">
+	<div class="tabs">
+	<div class="row">
+			<div class="col-5 ">
+				<a href="{% url 'important_tips' %}"class="btn1">important tips </a>
+			</div>
+			<div class="col-5 ">
+				<a href="{% url 'skills' %}"class="btn1">skills  </a>
+			</div>
+			<div class="col-5 ">
+				<a href="{% url 'objectives' %}"class="btn1">objectives </a>
+			</div>
+			<div class="col-5 ">
+				<a href="{% url 'goals' %}"class="btn1">goals</a>
+			</div>
+
+			<div class="col-5">
+				<a href="{% url 'requirements' %}"class="btn1">requirements </a>
+			</div>
+			<div class="col-5 ">
+				<a href="{% url 'jobs' %}"class="btn1">jobs </a>
+			</div>
+			<div class="col-5 ">
+				<a href="{% url 'experiences' %}"class="btn1">experiences </a>
+			</div>
+			<div class="col-5 ">
+				<a href="{% url 'faqs' %}"class="btn1">FAQS </a>
+				</div>
+			</div>
+
+		</div>
+
+			<div class="row">
+				<div class="column">
+					<h3><a href="{% url 'internship' %}"class="link">INTERNSHIPS
+					<img src="{% static 'images/internship.jpeg' %}" width="300px" height="300px"/></a></h3>
+				</div>
+				<div class="column column2">
+					<h3><a href="{% url 'resume_template' %}"class="link"> RESUME TEMPLATES
+					<img  src="{% static 'images/download 1.jpeg' %}" width="300px" height="300px"/></a></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h3><a href="{% url 'guidance' %}"class="link">GUIDANCE
+					<img  src="{% static 'images/guidance.jpeg' %}" width="300px" height="300px"></a></h3>
+				</div>
+				<div class="column column2">
+					<h3><a href="{% url 'interview_practice' %}"class="link">INTERVIEW QUESTIONS
+					<img src="{% static 'images/interview.png' %}" width="300px" height="300px"></a></h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<h3><a href="{% url 'hiring_process' %}"class="link">HIRING PROCESS
+					<img src="{% static 'images/hiring.jpeg' %}" width="300px" height="300px"></a></h3>
+				</div>
+				<div class="column column2">
+					<h3><a href="{% url 'certification' %}"class="link">GET CERTIFIED
+					<img src="{% static 'images/certified.jpeg' %}" ></a></h3>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer">
+	<div class="container">
+	<div class="footer-col-1">
+	<h5>Tech IndusOne Services</h5>
+	</div>
+	<div class="footer-col-2">
+	<h5>Follow Us</h5>
+	<ul>
+	<li>Facebook
+	<i class="fa fa-facebook-official"></i></li>
+	<li>Twitter
+	<i class="fa fa-twitter"></i></li>
+	<li>Instagram
+	<i class="fa fa-instagram"></i></li>
+	<li>LinkedIn
+	<i class="fa fa-linkedin" ></i></li>
+	</ul>
+	</div>
+	</div>
+	<hr>
+	<p class="copyright"> <i class="fa fa-copyright"> copyright 2010-indusone </i></p>
+	</div>
+
+
+
+
+</body>
+</html>

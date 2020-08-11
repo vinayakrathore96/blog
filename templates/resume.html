@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label>Address</label>
+        {{form.address}}
+        <h3>Upload Your Resume {{form.resume}}</h3>
+        <button type="submit" class="btn btn-primary">Upload Resume</button>
+    </form>
+</div>
+{% endblock %}

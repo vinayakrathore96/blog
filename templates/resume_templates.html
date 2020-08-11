@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="temp">
+	<h1><b>RESUME TEMPLATES</h1>
+	<h3>Resume is like a first impression .Before you, resume do your qualitative analysis.<br>
+	So it must be attractive and up to the mark.</h3>
+	<h2><b>Here are some resume templates:</b></h2>
+	<div class="image">
+		{% for list in lists %}
+	<img src="{{ list.resumetemplate.url }}" width="350px"height="450px">
+		{% endfor %}
+	<hr>
+	</div>
+	</div>
+{% endblock %}

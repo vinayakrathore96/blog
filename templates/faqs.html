@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="faq">
+	<marquee behavior="scroll"direction="left"scrollamount:"100"><h1><b>FAQS</b></h1></marquee>
+	<h2>FAQS</h2>
+	<hr>
+		{% for list in lists %}
+		<h3>{{list.question}}</h3>
+		<h4>{{list.answer}}</h4>
+		{% endfor %}
+	</div>
+{% endblock %}

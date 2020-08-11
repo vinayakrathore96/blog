@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="job">
+	<marquee behavior="scroll"direction="left"scrollamount:"100"><h1><b>JOBS</b></h1></marquee>
+	<h2>JOBS<h2>
+	<hr>
+		{% for list in lists %}
+		<li>{{ list.reference_id }}</li>
+		<li>{{ list.position }}</li>
+		<li>{{ list.description }}</li>
+		<li>{{ list.experience }}</li>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+	
+	<div class="imp">
+
+	<marquee behavior="scroll"direction="left"><h1><b>IMPORTANT TIPS</b></h1></marquee>
+	<h2>IMPORTANT TIPS</h2>
+	<ul>
+		{% for list in lists %}
+		<li>{{ list.tip }}</li>
+		{% endfor %}
+	</ul>
+	<hr>
+	</div>
+
+{% endblock %}

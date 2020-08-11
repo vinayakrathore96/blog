@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div class="certificate">
+	<h1><b>GET CERTIFIED</b></h1>
+	<h2>GET YOURSELF CERTIFIED!!!.....a step closure to your dreams....!!!<h2>
+	
+	<h3>Certifications are mainly for interns.</h3>
+	<p> After completing your internship and projects assigned,<br>
+	you can easily earn your certificate through the respected organisation .<br>
+	</p>
+	<hr>
+		<ol>
+			{% for list in lists %}
+			<li>{{list.name}}<br>
+				{{list.organiser}}</li>
+			{% endfor %}
+		</ol>
+	</div>
+
+{% endblock %}

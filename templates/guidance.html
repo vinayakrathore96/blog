@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="guide">
+	<h1><b>GUIDANCE</b></h1>
+	<hr>
+		{% for list in lists %}
+		<h4>{{list.content}}</h4>
+		{% endfor %}
+	</div>
+{% endblock %}
